@@ -1,6 +1,6 @@
 # vimbits
 
-Curated Suite of Lightweight Vim Plugins.
+ Suite of Lightweight Vim Plugins.
 
 1. [**HighlightOnYank**]() - Confirm yank operation by temporarily highlighting the region.
     
