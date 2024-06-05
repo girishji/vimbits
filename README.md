@@ -2,7 +2,7 @@
 
 Curated Suite of Lightweight Vim Plugins.
 
-1. [**HighlightedYank**]() - Confirm yank operation by temporarily highlighting the region.
+1. [**HighlightOnYank**]() - Confirm yank operation by temporarily highlighting the region.
     
 2. [**Easyjump**]() - Jump to any location on screen by typing two characters.
 
@@ -59,3 +59,11 @@ packadd vimbits
 ```
 
 </details>
+
+## Highlight on Yank
+
+Confirm that the text you intended to yank is actually yanked. This can help prevent surprises when you paste, especially if you accidentally hit the wrong keys.
+
+### Configuration
+
+To disable this feature 
