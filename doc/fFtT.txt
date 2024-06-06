@@ -1,0 +1,60 @@
+fFtT.txt*	Accurate left-right navigation in Vim
+
+Author: Girish (girishji AT gmail DOT com)
+For Vim version 9.0 and above
+
+==============================================================================
+CONTENTS                                            *fFtT-contents*
+
+     1. Overview ................................. |fFtT-overview|
+     2. Requirements ............................. |fFtT-requirements|
+     3. Installation ............................. |fFtT-installation|
+     4. Configuration............................. |fFtT-configuration|
+
+==============================================================================
+1. Overview					*fFtT-overview*
+
+Characters that are reachable with a single jump are highlighted, while others
+are dimmed. This enhancement improves the accuracy of navigation using `f`,
+`F`, `t`, and `T` commands. Additionally, you can provide a numerical prefix
+(e.g., `3f`), which will only highlight characters that occur the third time
+to the right of the cursor, while others are dimmed.
+
+This plugin does not remap keys or alter the behavior of commands. It solely
+focuses on highlighting relevant characters without making any changes to the
+default key mappings. The code consists of less than 100 lines, with
+explanatory comments.
+
+==============================================================================
+2. Requirements					*fFtT-requirements*
+
+- Vim >= 9.1
+
+==============================================================================
+3. Installation					*fFtT-installation*
+
+Install using vim-plug (https://github.com/junegunn/vim-plug)
+>
+	vim9script
+	plug#begin()
+	Plug 'girishji/fFtT.vim'
+	plug#end()
+
+Legacy script:
+>
+	call plug#begin()
+	Plug 'girishji/fFtT.vim'
+	call plug#end()
+
+Or use Vim's builtin package manager.
+
+==============================================================================
+4. Configuration				*fFtT-configuration*
+
+The appearance of characters that are unreachable within one jump is
+determined by the highlight group `FfTtSubtle`, which is linked to the
+`Comment` group by default.
+
+==============================================================================
+
+vim:tw=78:ts=8:noet:ft=help:norl:

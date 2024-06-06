@@ -1,0 +1,123 @@
+*easyjump.txt*		Vim motion on steroids
+
+Author: Girish (girishji AT gmail DOT com)
+For Vim version 9.0 and above
+
+==============================================================================
+CONTENTS                                            *easyjump-contents*
+
+     1. Overview ................................. |easyjump-overview|
+     2. Features ................................. |easyjump-features|
+     3. Requirements ............................. |easyjump-requirements|
+     4. Installation ............................. |easyjump-installation|
+     5. Configuration ............................ |easyjump-configuration|
+
+==============================================================================
+1. Overview					*easyjump-overview*
+
+Jump to any location by typing 2 characters.
+
+Jump: Type `s` and `c` (say) and you'll see new letters (virtual text) appear
+next to all the occurrences of `c`. Type `d` (for instance) and cursor jumps to
+`c` next to `d`.
+
+Visual Select: To visually select a block of text starting from cursor position
+to some occurrence of `c` type `vsc` and then type the highlighted character
+(say `d`).
+
+What if there is no letter next to where you want to jump to?~
+
+This scenario occurs when there aren't enough unique letters available for
+tagging. Simply press `<Tab>` (or `;`), and new tag labels will fill the
+remaining spots. To cycle backwards, press `<S-Tab>` (or `,`).
+
+Two-Character Mode (New): Activated with `2s` or simply `s` if
+`g:easyjump_two_chars` is configured as `true`.
+- Use `2s` + <character> + <tag_character> to leap to your destination (when a
+  tag character marks the spot).
+- If no tag label is present, type the adjacent character as well, forming
+  `2s` + <character_1> + <character_2> + _tag_character_ to execute the jump.
+
+==============================================================================
+2. Features					*easyjump-features*
+
+- Mapped to `s` but any other trigger (like `,`) would work.
+- Vim idioms supported. Use `dsxy` to delete, `csxy` to change, `vsxy` to select visually, etc.
+- Jump list (`:jumps`) updated so that you can jump back using `<c-o>`.
+- Does not alter the buffer.
+
+==============================================================================
+3. Requirements					*easyjump-requirements*
+
+- Vim >= 9.0
+
+==============================================================================
+4. Installation					*easyjump-installation*
+
+Install using vim-plug (https://github.com/junegunn/vim-plug).
+>
+	vim9script
+	plug#begin()
+	Plug 'girishji/easyjump.vim'
+	plug#end()
+
+Alternately,
+>
+	call plug#begin()
+	Plug 'girishji/easyjump.vim'
+	call plug#end()
+
+Or use Vim's builtin package manager.
+>
+	$ mkdir -p $HOME/.vim/pack/downloads/opt
+	$ cd $HOME/.vim/pack/downloads/opt
+	$ git clone https://github.com/girishji/easyjump.git
+
+If using builtin package manager, add the following line to your $HOME/.vimrc
+file:
+>
+	packadd easyjump
+
+==============================================================================
+5. Configuration				*easyjump-configuration*
+
+Trigger Key~
+
+By default `s` is the trigger key. To disable it put the following in `.vimrc`
+file. `s` will be restored to Vim original keybinding (`:h s`).
+>
+	g:easyjump_default_keymap = false
+
+To make `,` (for example) trigger the jump put the following in `.vimrc` file.
+>
+	nmap , <Plug>EasyjumpJump;
+	omap , <Plug>EasyjumpJump;
+	vmap , <Plug>EasyjumpJump;
+
+Case~
+
+The destination character you type is compared against visible buffer text. To
+make the search case sensitive (case), insensitive (icase), or smart case
+(smart) put the following in `.vimrc`.
+>
+	g:easyjump_case = 'smart' # Can be 'case', 'icase', or 'smart'
+
+Highlight~
+
+The tag letters that appear next to destination locations utilize highlight
+group `EasyJump`. It is linked to `MatchParen` by default. Set this group using
+`:highlight` command to change colors.
+
+Letters~
+
+The virtual text letters that appear next to the destination you want to jump
+to are prioritized based on distance from the cursor, with at least one letter
+per line. The letters appear in the following order of decreasing priority. The
+letters and order can be changed by assigning to the following variable.
+>
+	g:easyjump_letters =
+		'asdfgwercvhjkluiopynmbtqxzASDFGWERCVHJKLUIOPYNMBTQXZ0123456789'
+
+==============================================================================
+
+vim:tw=78:ts=8:noet:ft=help:norl:
