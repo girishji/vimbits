@@ -1,14 +1,14 @@
 # vimbits
 
-Suite of Lightweight Vim Plugins.
+Suite of lightweight Vim plugins.
 
-1. [**HighlightOnYank**]() - Confirm yank operation by temporarily highlighting the region.
-    
-2. [**EasyJump**]() - Jump to any location on screen by typing two characters.
+1. [**Highlight on Yank**](#highlight-on-yank) - Confirm yank operation by temporarily highlighting the region.
 
-3. [**fFtT**]() - Highlight characters reachable in one jump using `f`, `t`, `F`, and `T` commands. 
+2. [**Easy Jump**](#easy-jump) - Jump to any location on screen by typing two characters.
+
+3. [**fFtT**](#fFtT) - Highlight characters reachable in one jump using `f`, `t`, `F`, and `T` commands. 
  
-4. [**Vim9cmdline**]() - Use *vim9script* in command-line seamlessley.
+4. [**Vim9cmdline**](#vim9cmdline) - Use *vim9script* in command-line seamlessley.
 
 
 ## Requirements
@@ -21,7 +21,7 @@ Install it via [vim-plug](https://github.com/junegunn/vim-plug).
 
 <details><summary><b>Show instructions</b></summary>
 <br>
-  
+
 Using vim9 script:
 
 ```vim
@@ -62,7 +62,7 @@ packadd vimbits
 
 ## Configuration
 
-All plugins are enabled by default. To disable a plugin set the corresponding global variable to `false`.
+All plugins are enabled by default. To disable a plugin, set the corresponding global variable to `false`.
 
 ```
 vim9script
