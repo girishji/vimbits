@@ -211,15 +211,17 @@ The appearance of characters that are unreachable within one jump is determined 
 
 # Plugin: Vim9Cmdline
 
-*vim9script* is an improvement over the legacy script. While there's no direct option to switch the command line to parse *vim9script*, you can execute *vim9script* commands by simply prepending each command with `vim9`.
+*vim9script* offers significant improvements over the legacy script. Although there isn't a direct way to switch the command line to parse *vim9script*, you can execute *vim9script* commands by prepending each command with `vim9`. This plugin automates that process for you and also handles additional tasks for visual mode.
 
-However, remember that execution occurs in the global context, not the script-local context. This means you need to declare variables with the `g:` prefix, like `g:foo = 'bar'`.
+Some things to keep in mind:
 
-Common commands such as visual mode select (`'<,'>`), shell commands (`!`), substitution (`s//`), and global (`g//`) work as expected, even with `vim9` prepended. 
+- Remember that execution occurs in the global context, not the script-local context. This means you need to declare variables with the `g:` prefix, like `g:foo = 'bar'`.
 
-When specifying a range for the *substitution* command, the range should be prefixed by a *colon*. For example, to specify a line range from line 1 to line 10, use `:vim9 :1,10s/foo/bar`. Ranges can also be specified with marks, visual selection, and search patterns.
+- Common commands such as visual mode select (`'<,'>`), shell commands (`!`), substitution (`s//`), and global (`g//`) work as expected, even with `vim9` prepended. 
 
-If you work with multi-byte UTF-8 characters, you'll appreciate the *vim9* command line. When slicing a UTF-8 string using the `[x : y]` operator, *vim9* is more predictable because it uses character-based addressing, unlike the byte-based addressing of the legacy script.
+- When specifying a range for the *substitution* command, the range should be prefixed by a *colon*. For example, to specify a line range from line 1 to line 10, use `:vim9 :1,10s/foo/bar`. Ranges can also be specified with marks, visual selection, and search patterns.
+
+- If you work with multi-byte UTF-8 characters, you'll appreciate the *vim9* command line. When slicing a UTF-8 string using the `[x : y]` operator, *vim9* is more predictable because it uses character-based addressing, unlike the byte-based addressing of the legacy script.
 
 You can toggle back to the legacy script using the `:ToggleVim9Cmdline` command.
 
