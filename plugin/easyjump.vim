@@ -19,7 +19,7 @@ def VJump(count: number = 1)
     :normal! m'gv``
 enddef
 
-if get(g:, 'vimbits_easy_jump', true)
+if get(g:, 'vimbits_easyjump', true)
     :nnoremap <silent> <Plug>EasyjumpJump; :<c-u>call <SID>Jump(v:count1)<cr>
     :onoremap <silent> <Plug>EasyjumpJump; :<c-u>call <SID>Jump(v:count1)<cr>
     :vnoremap <silent> <Plug>EasyjumpJump; :<c-u>call <SID>VJump(v:count1)<cr>

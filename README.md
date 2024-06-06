@@ -8,7 +8,7 @@ Suite of lightweight Vim plugins.
 
 3. [**fFtT**](#plugin-fFtT) - Highlight characters reachable in one jump using `f`, `t`, `F`, and `T` commands. 
  
-4. [**Vim9cmdline**](#plugin-vim9cmdline) - Use *vim9script* in command-line seamlessley.
+4. [**Vim9 Cmdline**](#plugin-vim9-cmdline) - Use *vim9script* in command-line seamlessley.
 
 
 ## Requirements
@@ -69,7 +69,7 @@ vim9script
 g:vimbits_highlight_on_yank = true
 g:vimbits_easyjump = true
 g:vimbits_fFtT = true
-g:vimbits_vim9cmdline = true
+g:vimbits_vim9_cmdline = true
 ```
 
 More configurable options pertaining to individual plugins are described below.
@@ -85,7 +85,7 @@ To customize the default settings, add the following to your `.vimrc` file:
 ```vim
 vim9script
 g:vimbits_highlight_on_yank = false  # Disables the default autocmd
-import autoload 'vimbits/highlightonyank.vim' as hy
+import autoload 'vimbits/highlight_on_yank.vim' as hy
 augroup HighlightOnYank
     autocmd!
     autocmd TextYankPost * hy.HighlightOnYank('IncSearch', 300, true)
@@ -209,7 +209,7 @@ This plugin does not alter Vim operators or commands. It solely focuses on highl
 
 The appearance of characters that are unreachable within one jump is determined by the highlight group `FfTtSubtle`, which is linked to the `Comment` group by default.
 
-# Plugin: Vim9cmdline
+# Plugin: Vim9 Cmdline
 
 *vim9script* is an improvement over the legacy script. While there's no direct option to switch the command line to parse *vim9script*, you can execute *vim9script* commands by simply prepending each command with `vim9`.
 
@@ -221,7 +221,7 @@ When specifying a range for the *substitution* command, the range should be pref
 
 If you work with multi-byte UTF-8 characters, you'll appreciate the *vim9* command line. When slicing a UTF-8 string using the `[x : y]` operator, *vim9* is more predictable because it uses character-based addressing, unlike the byte-based addressing of the legacy script.
 
-You can toggle back to the legacy script using the `:Vim9cmdlineToggle` command.
+You can toggle back to the legacy script using the `:ToggleVim9Cmdline` command.
 
 # Other Plugins to Enhance Your Workflow
 
