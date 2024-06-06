@@ -78,7 +78,7 @@ More configurable options pertaining to individual plugins are described below.
 
 Ensure the text you intended to yank is correctly selected. This feature helps avoid surprises when pasting, especially if you accidentally hit the wrong keys.
 
-The yanked region is temporarily highlighted for 300 milliseconds by default. The duration and highlight group are configurable, and there's an option to disable highlighting in visual mode.
+The yanked region is temporarily highlighted (using `:h hl-IncSearch`) for 300 milliseconds by default. The duration and highlight group are configurable, and there's an option to disable highlighting in visual mode.
 
 To customize the default settings, add the following to your `.vimrc` file:
 
