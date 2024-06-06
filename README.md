@@ -1,4 +1,4 @@
-# vimbits
+# VimBits
 
 Suite of lightweight Vim plugins.
 
