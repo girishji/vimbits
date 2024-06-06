@@ -230,3 +230,5 @@ You can toggle back to the legacy script using the `:ToggleVim9Cmdline` command.
 2. [**devdocs.vim**](https://github.com/girishji/devdocs.vim) - browse documentation from [devdocs.io](https://devdocs.io).
 
 3. [**scope.vim**](https://github.com/girishji/scope.vim) - fuzzy find anything.
+
+4. [**Autosuggest.vim**](https://github.com/girishji/autosuggest.vim) - autocompletion for Vim's command mode.
