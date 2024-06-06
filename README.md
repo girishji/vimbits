@@ -221,7 +221,7 @@ Some things to keep in mind:
 
 - When specifying a range (`:h :range`) for the *substitute* (`:h :s`) or *global* (`:h :g`) command, the range should be prefixed by a *colon*. For example, to specify a line range from line 1 to line 10, use `:vim9 :1,10s/foo/bar` (notice the `:` before `1,10`). Ranges can also be specified with marks, visual selection, and search patterns.
 
-- If you work with multi-byte UTF-8 characters, you'll appreciate the *vim9* command line. When slicing a UTF-8 string using the `[x : y]` operator, *vim9* is more predictable because it uses character-based addressing, unlike the byte-based addressing of the legacy script.
+- If you work with multi-byte UTF-8 characters, you'll appreciate the *vim9* command line. When slicing a UTF-8 string using the `[from : to]` operator, *vim9* is more predictable because it uses character-based addressing, unlike the byte-based addressing of the legacy script.
 
 There are no drawbacks to keeping the command line always in *vim9script* mode. However, you can switch back to the legacy script by using the `:ToggleVim9Cmdline` command.
 
