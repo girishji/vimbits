@@ -66,10 +66,10 @@ All plugins are enabled by default. To disable a plugin, set the corresponding g
 
 ```
 vim9script
-g:vimbits_highlight_on_yank = false
-g:vimbits_easyjump = false
-g:vimbits_fFtT = false
-g:vimbits_vim9cmdline = false
+g:vimbits_highlight_on_yank = true
+g:vimbits_easyjump = true
+g:vimbits_fFtT = true
+g:vimbits_vim9cmdline = true
 ```
 
 More configurable options pertaining to individual plugins are described below.
