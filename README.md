@@ -2,13 +2,13 @@
 
 Suite of lightweight Vim plugins.
 
-1. [**Highlight on Yank**](#plugin:-highlight-on-yank) - Confirm yank operation by temporarily highlighting the region.
+1. [**Highlight on Yank**](#plugin-highlight-on-yank) - Confirm yank operation by temporarily highlighting the region.
 
-2. [**Easy Jump**](#plugin:-easy-jump) - Jump to any location on screen by typing two characters.
+2. [**Easy Jump**](#plugin-easy-jump) - Jump to any location on screen by typing two characters.
 
-3. [**fFtT**](#plugin:-fFtT) - Highlight characters reachable in one jump using `f`, `t`, `F`, and `T` commands. 
+3. [**fFtT**](#plugin-fFtT) - Highlight characters reachable in one jump using `f`, `t`, `F`, and `T` commands. 
  
-4. [**Vim9cmdline**](#plugin:-vim9cmdline) - Use *vim9script* in command-line seamlessley.
+4. [**Vim9cmdline**](#plugin-vim9cmdline) - Use *vim9script* in command-line seamlessley.
 
 
 ## Requirements
