@@ -223,7 +223,7 @@ Some things to keep in mind:
 
 - If you work with multi-byte UTF-8 characters, you'll appreciate the *vim9* command line. When slicing a UTF-8 string using the `[x : y]` operator, *vim9* is more predictable because it uses character-based addressing, unlike the byte-based addressing of the legacy script.
 
-You can toggle back to the legacy script using the `:ToggleVim9Cmdline` command.
+There are no drawbacks to keeping the command line always in *vim9script* mode. However, you can switch back to the legacy script by using the `:ToggleVim9Cmdline` command.
 
 # Other Plugins to Enhance Your Workflow
 
