@@ -8,7 +8,7 @@ vim9script
 
 :highlight default link EasyJump MatchParen
 
-import autoload '../autoload/easyjump/jump.vim'
+import autoload '../autoload/vimbits/jump.vim'
 
 def Jump(count: number = 1)
     jump.Jump(count == 2)
