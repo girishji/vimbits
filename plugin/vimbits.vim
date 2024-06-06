@@ -7,7 +7,7 @@ g:loaded_vimbits = true
 import '../autoload/vimbits/highlightonyank.vim' as hy
 import '../autoload/vimbits/vim9cmdline.vim' as v9
 
-if !exists(':ToggleVim9Cmdline')
+if get(g:, 'vimbits_vim9cmdline', true) && !exists(':ToggleVim9Cmdline')
     command ToggleVim9Cmdline {
         g:vimbits_vim9cmdline = !get(g:, 'vimbits_vim9cmdline', true)
     }
