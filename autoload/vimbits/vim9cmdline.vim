@@ -1,7 +1,7 @@
 vim9script
 
 export def Vim9cmdlineSet()
-    if get(g:, 'vimbits_vim9cmdline', true)
+    if get(g:, 'vimbits_vim9cmdline', false)
         if visualmode() == null_string
             setcmdline('vim9 ')
         else
@@ -18,7 +18,7 @@ export def Vim9cmdlineSet()
 enddef
 
 export def Vim9cmdlineUnset()
-    if get(g:, 'vimbits_vim9cmdline', true)
+    if get(g:, 'vimbits_vim9cmdline', false)
         silent! cunmap <c-u>
         silent! cunmap <c-w>
         silent! cunmap <c-b>

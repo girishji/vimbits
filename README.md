@@ -62,14 +62,14 @@ packadd vimbits
 
 ## Configuration
 
-All plugins are enabled by default. To disable a plugin, set the corresponding global variable to `false`.
+By default, all plugins are enabled except for Vim9Cmdline. To disable a specific plugin, set its corresponding global variable to `false`.
 
 ```
 vim9script
 g:vimbits_highlightonyank = true
 g:vimbits_easyjump = true
 g:vimbits_fFtT = true
-g:vimbits_vim9cmdline = true
+g:vimbits_vim9cmdline = false
 ```
 
 More configurable options pertaining to individual plugins are described below.
@@ -219,11 +219,13 @@ Some things to keep in mind:
 
 - Common commands, such as visual range (`'<,'>`), other types of ranges, shell commands (`!`), substitution (`s//`), and global (`g//`), work as expected even when `vim9` is prepended.
 
-- When specifying a range (`:h :range`) for the *substitute* (`:h :s`) or *global* (`:h :g`) command, the range should be prefixed by a *colon*. For example, to specify a line range from line 1 to line 10, use `:vim9 :1,10s/foo/bar` (notice the `:` before `1,10`). Ranges can also be specified with marks, visual selection, and search patterns.
+- When specifying a range (`:h :range`) for the *substitute* (`:h :s`) or *global* (`:h :g`) command, the range should be prefixed by a *colon*. For example, to specify a line range from line 1 to line 10, use `:vim9 :1,10s/foo/bar` (notice the `:` before `1,10`). Ranges can also be specified by `%` (whole buffer), marks, visual selection, and search patterns.
+
+- If your keymap's right-hand side (rhs) starts with a range, it may throw an error unless prefixed with `silent` or `:`. To avoid this, ensure the {rhs} of your keymap begins with `silent` or `:` if it starts with a `:h :range`.
 
 - If you work with multi-byte UTF-8 characters, you'll appreciate the *vim9* command line. When slicing a UTF-8 string using the `[from : to]` operator, *vim9* is more predictable because it uses character-based addressing, unlike the byte-based addressing of the legacy script.
 
-There are no drawbacks to keeping the command line always in *vim9script* mode. However, you can switch back to the legacy script by using the `:ToggleVim9Cmdline` command.
+There are no drawbacks to keeping the command line always in *vim9script* mode. However, you can switch back to the legacy script anytime by using the `:ToggleVim9Cmdline` command.
 
 ## Other Plugins to Enhance Your Workflow
 
