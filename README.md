@@ -217,7 +217,7 @@ Some things to keep in mind:
 
 - Remember that execution occurs in the global context, not the script-local context. This means you need to declare variables with the `g:` prefix, like `g:foo = 'bar'`.
 
-- Common commands such as visual mode select (`'<,'>`), ranges, shell commands (`!`), substitution (`s//`), and global (`g//`) work as expected, even with `vim9` prepended. 
+- Common commands, such as visual range (`'<,'>`), other types of ranges, shell commands (`!`), substitution (`s//`), and global (`g//`), work as expected even when `vim9` is prepended.
 
 - When specifying a range for the *substitution* command, the range should be prefixed by a *colon*. For example, to specify a line range from line 1 to line 10, use `:vim9 :1,10s/foo/bar` (notice the `:` before `1,10`). Ranges can also be specified with marks, visual selection, and search patterns.
 
