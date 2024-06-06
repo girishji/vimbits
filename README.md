@@ -219,7 +219,7 @@ Some things to keep in mind:
 
 - Common commands such as visual mode select (`'<,'>`), shell commands (`!`), substitution (`s//`), and global (`g//`) work as expected, even with `vim9` prepended. 
 
-- When specifying a range for the *substitution* command, the range should be prefixed by a *colon*. For example, to specify a line range from line 1 to line 10, use `:vim9 :1,10s/foo/bar`. Ranges can also be specified with marks, visual selection, and search patterns.
+- When specifying a range for the *substitution* command, the range should be prefixed by a *colon*. For example, to specify a line range from line 1 to line 10, use `:vim9 :1,10s/foo/bar` (notice the `:` before `1,10`). Ranges can also be specified with marks, visual selection, and search patterns.
 
 - If you work with multi-byte UTF-8 characters, you'll appreciate the *vim9* command line. When slicing a UTF-8 string using the `[x : y]` operator, *vim9* is more predictable because it uses character-based addressing, unlike the byte-based addressing of the legacy script.
 
