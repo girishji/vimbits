@@ -211,7 +211,7 @@ The appearance of characters that are unreachable within one jump is determined 
 
 # Plugin: Vim9Cmdline
 
-*vim9script* offers significant improvements over the legacy script. Although there isn't a direct way to switch the command line to parse *vim9script*, you can execute *vim9script* commands by prepending each command with `vim9`. This plugin automates that process for you and also handles additional tasks for visual mode.
+*vim9script* offers significant improvements over the legacy script. Although there isn't a direct way to switch the command line to parse *vim9script*, you can execute *vim9script* commands by prepending each command with `vim9`. This plugin automates that process for you.
 
 Some things to keep in mind:
 
