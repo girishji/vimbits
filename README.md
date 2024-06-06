@@ -2,13 +2,13 @@
 
 Suite of lightweight Vim plugins.
 
-1. [**Highlight on Yank**](#plugin-highlight-on-yank) - Confirm yank operation by temporarily highlighting the region.
+1. [**HighlightOnYank**](#plugin-highlightonyank) - Confirm yank operation by temporarily highlighting the region.
 
-2. [**Easy Jump**](#plugin-easy-jump) - Jump to any location on screen by typing two characters.
+2. [**EasyJump**](#plugin-easyjump) - Jump to any location on screen by typing two characters.
 
 3. [**fFtT**](#plugin-fFtT) - Highlight characters reachable in one jump using `f`, `t`, `F`, and `T` commands. 
  
-4. [**Vim9 Cmdline**](#plugin-vim9-cmdline) - Use *vim9script* in command-line seamlessley.
+4. [**Vim9Cmdline**](#plugin-vim9cmdline) - Use *vim9script* in command-line seamlessley.
 
 
 ## Requirements
@@ -66,15 +66,15 @@ All plugins are enabled by default. To disable a plugin, set the corresponding g
 
 ```
 vim9script
-g:vimbits_highlight_on_yank = true
+g:vimbits_highlightonyank = true
 g:vimbits_easyjump = true
 g:vimbits_fFtT = true
-g:vimbits_vim9_cmdline = true
+g:vimbits_vim9cmdline = true
 ```
 
 More configurable options pertaining to individual plugins are described below.
 
-# Plugin: Highlight on Yank
+# Plugin: HighlightOnYank
 
 Ensure the text you intended to yank is correctly selected. This feature helps avoid surprises when pasting, especially if you accidentally hit the wrong keys.
 
@@ -84,8 +84,8 @@ To customize the default settings, add the following to your `.vimrc` file:
 
 ```vim
 vim9script
-g:vimbits_highlight_on_yank = false  # Disables the default autocmd
-import autoload 'vimbits/highlight_on_yank.vim' as hy
+g:vimbits_highlightonyank = false  # Disables the default autocmd
+import autoload 'vimbits/highlightonyank.vim' as hy
 augroup HighlightOnYank
     autocmd!
     autocmd TextYankPost * hy.HighlightOnYank('IncSearch', 300, true)
@@ -100,7 +100,7 @@ augroup END
 
 This mini plugin is inspired by [this issue](https://github.com/vim/vim/issues/14848).
 
-# Plugin: Easy Jump
+# Plugin: EasyJump
 
 Jump to any location on screen by typing two characters.
 
@@ -209,7 +209,7 @@ This plugin does not alter Vim operators or commands. It solely focuses on highl
 
 The appearance of characters that are unreachable within one jump is determined by the highlight group `FfTtSubtle`, which is linked to the `Comment` group by default.
 
-# Plugin: Vim9 Cmdline
+# Plugin: Vim9Cmdline
 
 *vim9script* is an improvement over the legacy script. While there's no direct option to switch the command line to parse *vim9script*, you can execute *vim9script* commands by simply prepending each command with `vim9`.
 
