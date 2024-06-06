@@ -74,7 +74,7 @@ g:vimbits_vim9cmdline = false
 
 More configurable options pertaining to individual plugins are described below.
 
-# 🔌 Plugin: Highlight on Yank
+# Plugin: Highlight on Yank
 
 Ensure the text you intended to yank is correctly selected. This feature helps avoid surprises when pasting, especially if you accidentally hit the wrong keys.
 
