@@ -225,7 +225,7 @@ Some things to keep in mind:
 
 There are no drawbacks to keeping the command line always in *vim9script* mode. However, you can switch back to the legacy script by using the `:ToggleVim9Cmdline` command.
 
-# Other Plugins to Enhance Your Workflow
+## Other Plugins to Enhance Your Workflow
 
 1. [**vimcomplete**](https://github.com/girishji/vimcomplete) - enhances autocompletion in Vim.
 
