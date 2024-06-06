@@ -15,7 +15,7 @@ endif
 
 augroup Vimbits | autocmd!
     if get(g:, 'vimbits_highlight_on_yank', true)
-        autocmd TextYankPost * hy.HighlightedYank()
+        autocmd TextYankPost * hy.HighlightOnYank()
     endif
     if get(g:, 'vimbits_vim9cmdline', true)
         autocmd CmdlineEnter : v9.Vim9cmdlineSet()

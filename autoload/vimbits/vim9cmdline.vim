@@ -16,10 +16,10 @@ export def Vim9cmdlineSet()
 enddef
 
 export def Vim9cmdlineUnset()
-    cunmap <c-u>
-    cunmap <c-w>
-    cunmap <c-b>
-    cunmap <c-left>
-    cunmap <bs>
-    cunmap <left>
+    silent! cunmap <c-u>
+    silent! cunmap <c-w>
+    silent! cunmap <c-b>
+    silent! cunmap <c-left>
+    silent! cunmap <bs>
+    silent! cunmap <left>
 enddef
