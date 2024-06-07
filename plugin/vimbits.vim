@@ -15,7 +15,11 @@ endif
 
 augroup Vimbits | autocmd!
     if get(g:, 'vimbits_highlightonyank', true)
-        autocmd TextYankPost * hy.HighlightOnYank()
+        if has('patch-9.1.0443')  # has getregionpos() and bug fixes
+            autocmd TextYankPost * hy.HighlightOnYank()
+        else
+            autocmd TextYankPost * hy.HighlightOnYankLegacy()
+        endif
     endif
     if get(g:, 'vimbits_vim9cmdline', false)
         autocmd CmdlineEnter : v9.Vim9cmdlineSet()
