@@ -213,6 +213,8 @@ The appearance of characters that are unreachable within one jump is determined 
 
 *vim9script* offers significant improvements over the legacy script. Although there isn't a direct way to switch the command line to parse *vim9script*, you can execute *vim9script* commands by prepending each command with `vim9`. This plugin automates that process for you.
 
+<img src='https://gist.githubusercontent.com/girishji/40e35cd669626212a9691140de4bd6e7/raw/74e521e25364bdc01a94ce8668e8d8ef92308a59/vim9cmdline.jpeg' width='700'>
+
 Some things to keep in mind:
 
 - Remember that execution occurs in the global context, not the script-local context. This means you need to declare variables with the `g:` prefix, like `g:foo = 'bar'`.
