@@ -62,7 +62,7 @@ packadd vimbits
 
 ## Configuration
 
-By default, all plugins are enabled except for Vim9Cmdline. To disable a specific plugin, set its corresponding global variable to `false`.
+By default, all plugins are enabled except for Vim9Cmdline. To disable a specific plugin, set its corresponding global variable to `false`. To enable a plugin, set its corresponding global variable to `true`.
 
 ```
 vim9script
