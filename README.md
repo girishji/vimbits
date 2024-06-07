@@ -223,7 +223,7 @@ Some things to keep in mind:
 
 - When specifying a range (`:h :range`) (for commands like `:h :s`, `:h :g`, `:h :t`, `:h :p`, `:h :!`, etc.), the range should be prefixed by a *colon*. For example, `:vim9 :%s/foo/bar` (notice the `:` before `%`), or `:vim9 :1,10s/foo/bar`, or `:vim9 :'<,'>s/foo/bar`.
 
-- If your keymap's right-hand side (rhs) starts with a range, it may throw an error. To avoid this, ensure the {rhs} of your keymap begins with `silent` or `:` if it starts with a `:h :range`.
+- Related to the above, if your keymap's right-hand side (rhs) starts with a range, it may throw an error. To avoid this, ensure the {rhs} of your keymap begins with `silent` or `:` if it starts with a `:h :range`. For example, `nnoremap your_key :% !your_cmd` throws an error, while `nnoremap your_key :silent % !your_cmd` and `nnoremap your_key ::% !your_cmd` are both OK.
 
 - If you work with multi-byte UTF-8 characters, you'll appreciate the *vim9* command line. When slicing a UTF-8 string using the `[from : to]` operator, *vim9* is more predictable because it uses character-based addressing, unlike the byte-based addressing of the legacy script.
 
