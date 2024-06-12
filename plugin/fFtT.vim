@@ -84,7 +84,4 @@ if get(g:, 'vimbits_fFtT', true)
     nnoremap T <Plug>(fFtT-T)T
     xnoremap T <Plug>(fFtT-T)T
     onoremap T <Plug>(fFtT-T)T
-    # nnoremap <esc> <Plug>(fFtT-esc)<esc>
-    # xnoremap <esc> <Plug>(fFtT-esc)<esc>
-    # onoremap <esc> <Plug>(fFtT-esc)<esc>
 endif
