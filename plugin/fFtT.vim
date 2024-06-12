@@ -46,7 +46,7 @@ def HighligtChars(s: string): string
             if freq[ch] != v:count1
                 if freq[ch] > maxloc
                     # If we encounter a super long line, there's no need to
-                    # search for locations most likely to be invisible.
+                    # search for locations that are off screen.
                     break
                 endif
                 locations->add([lnum, loc + 1])
@@ -84,7 +84,7 @@ if get(g:, 'vimbits_fFtT', true)
     nnoremap T <Plug>(fFtT-T)T
     xnoremap T <Plug>(fFtT-T)T
     onoremap T <Plug>(fFtT-T)T
-    nnoremap <esc> <Plug>(fFtT-esc)<esc>
-    xnoremap <esc> <Plug>(fFtT-esc)<esc>
-    onoremap <esc> <Plug>(fFtT-esc)<esc>
+    # nnoremap <esc> <Plug>(fFtT-esc)<esc>
+    # xnoremap <esc> <Plug>(fFtT-esc)<esc>
+    # onoremap <esc> <Plug>(fFtT-esc)<esc>
 endif

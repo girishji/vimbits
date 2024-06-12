@@ -23,7 +23,7 @@ export def Setup()
     endif
 enddef
 
-# get all line numbers in the visible are of the window ordered by distance from cursor
+# get all line numbers in the visible area of the window ordered by distance from cursor
 def WindowLineNrs(): list<any>
     # line('w$') does not include a long line (broken into many lines) that is only partly visible
     var [lstart, lend] = [max([1, line('w0')]), min([line('w$') + 1, line('$')])] # lines on screen
