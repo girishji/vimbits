@@ -171,8 +171,6 @@ def ScreenPos(lnum: number, col: number): list<number>
 enddef
 
 def ShowLocations(group: number)
-    var curpos_saved: list<number> = []
-    var scrolloff: number
     try
         popup_clear()
         var ntags = labels->len()
