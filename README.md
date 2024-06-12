@@ -225,9 +225,11 @@ Some things to keep in mind:
 
 - Related to the above, if your keymap's right-hand side (rhs) starts with a range (`:h :range`), it may throw an error. To avoid this, use `:h <Cmd>` or ensure the {rhs} of your keymap begins with `silent` or `:`. For example, `nnoremap your_key :% !your_cmd<cr>` throws an error, while `nnoremap your_key <cmd>% !your_cmd<cr>`, `nnoremap your_key :silent % !your_cmd<cr>` and `nnoremap your_key ::% !your_cmd<cr>` are OK.
 
+- If you have defined a custom command with a completion function (`command -complete=custom,Foo() ...`), be aware that this function may not work as expected if it is designed to complete the n-th word. This is because there are now n+1 words, including the word `vim9`. You many need to adapt this function.
+
 - If you work with multi-byte UTF-8 characters, you'll appreciate the *vim9* command line. When slicing a UTF-8 string using the `[from : to]` operator, *vim9* is more predictable because it uses character-based addressing, unlike the byte-based addressing of the legacy script.
 
-There are no drawbacks to keeping the command line always in *vim9script* mode. However, you can switch back to the legacy script anytime by using the `:ToggleVim9Cmdline` command.
+You can keep the command line in *vim9script* mode by default and switch back to the legacy script at any time using the `:ToggleVim9Cmdline` command.
 
 ## Other Plugins to Enhance Your Workflow
 
