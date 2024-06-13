@@ -225,17 +225,7 @@ Some things to keep in mind:
   From `:h [range]`:
 
   > In Vim9 script a range needs to be prefixed with a colon to avoid ambiguity
-  > with continuation lines.  For example, "+" can be used for a range but is also
-  > a continuation of an expression:
-  > ```
-  > 	var result = start
-  > 	+ print
-  > ```
-  > If the "+" is a range then it must be prefixed with a colon:
-  > ```
-  > 	var result = start
-  > 	:+ print
-  > ```
+  > with continuation lines.
 
 - Related to the above, if your keymap's right-hand side (rhs) starts with a range, it may throw an error. To avoid this, use `:h <Cmd>` or ensure the {rhs} of your keymap begins with `silent` or `:`. For example, `nnoremap your_key :% !your_cmd<cr>` throws an error, while `nnoremap your_key <cmd>% !your_cmd<cr>`, `nnoremap your_key :silent % !your_cmd<cr>` and `nnoremap your_key ::% !your_cmd<cr>` are OK.
 
