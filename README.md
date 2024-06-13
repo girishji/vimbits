@@ -221,9 +221,23 @@ Some things to keep in mind:
 
 - Common commands, such as visual range (`'<,'>`), other types of ranges, shell commands (`!`), substitution (`s//`), and global (`g//`), work as expected even when `vim9` is prepended.
 
-- When specifying a range (`:h :range`) (for commands like `:h :s`, `:h :g`, `:h :t`, `:h :p`, `:h :!`, etc.), the range should be prefixed by a *colon*. For example, `:vim9 :%s/foo/bar` (notice the `:` before `%`), or `:vim9 :1,10s/foo/bar`, or `:vim9 :'<,'>s/foo/bar`.
+- Ranges to Ex commands should be prefixed with a colon. For example, `:vim9 :%s/foo/bar`.
+  From `:h [range]`:
 
-- Related to the above, if your keymap's right-hand side (rhs) starts with a range (`:h :range`), it may throw an error. To avoid this, use `:h <Cmd>` or ensure the {rhs} of your keymap begins with `silent` or `:`. For example, `nnoremap your_key :% !your_cmd<cr>` throws an error, while `nnoremap your_key <cmd>% !your_cmd<cr>`, `nnoremap your_key :silent % !your_cmd<cr>` and `nnoremap your_key ::% !your_cmd<cr>` are OK.
+  > In Vim9 script a range needs to be prefixed with a colon to avoid ambiguity
+  > with continuation lines.  For example, "+" can be used for a range but is also
+  > a continuation of an expression:
+  > ```
+  > 	var result = start
+  > 	+ print
+  > ```
+  > If the "+" is a range then it must be prefixed with a colon:
+  > ```
+  >	var result = start
+  >	:+ print
+  > ```
+
+- Related to the above, if your keymap's right-hand side (rhs) starts with a range, it may throw an error. To avoid this, use `:h <Cmd>` or ensure the {rhs} of your keymap begins with `silent` or `:`. For example, `nnoremap your_key :% !your_cmd<cr>` throws an error, while `nnoremap your_key <cmd>% !your_cmd<cr>`, `nnoremap your_key :silent % !your_cmd<cr>` and `nnoremap your_key ::% !your_cmd<cr>` are OK.
 
 - If you have defined a custom command with a completion function (`command -complete=custom,Foo() ...`), be aware that this function may not work as expected if it is designed to complete the n-th word. This is because there are now n+1 words, including the word `vim9`. You many need to adapt this function.
 
