@@ -221,7 +221,7 @@ Some things to keep in mind:
 
 - Common commands, such as visual range (`'<,'>`), other types of ranges, shell commands (`!`), substitution (`s//`), and global (`g//`), work as expected even when `vim9` is prepended.
 
-- Ranges to Ex commands should be prefixed with a colon. For example, `:vim9 :%s/foo/bar`.
+- Ranges to Ex commands should be prefixed with a colon. For example, `:vim9 :%s/foo/bar` (notice the `:` before `%s`).
   From `:h [range]`:
 
   > In Vim9 script a range needs to be prefixed with a colon to avoid ambiguity
