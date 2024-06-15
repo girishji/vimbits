@@ -19,7 +19,13 @@ export def HighlightOnYank(hlgroup = 'IncSearch', duration = 300, in_visual = tr
             return [v[0][1], col_beg, col_end - col_beg]
         }))
         var winid = win_getid()
-        timer_start(duration, (_) => m->matchdelete(winid))
+        timer_start(duration, (_) => {
+            # keymap like `:vmap // y/<C-R>"<CR>` (search for visually selected text) throws E803
+            try
+                m->matchdelete(winid)
+            catch
+            endtry
+        })
     endif
 enddef
 
@@ -41,6 +47,12 @@ export def HighlightOnYankLegacy(hlgroup = 'IncSearch', duration = 300, in_visua
             pos->add([lnum, col_b, min([col_e - col_b + 1, maxcol])])
         endfor
         var m = matchaddpos(hlgroup, pos)
-        timer_start(duration, (_) => m->matchdelete())
+        var winid = win_getid()
+        timer_start(duration, (_) => {
+            try
+                m->matchdelete(winid)
+            catch
+            endtry
+        })
     endif
 enddef
