@@ -1,9 +1,4 @@
 /Content.IE?/	vimtips.txt	/*\/Content.IE?\/*
-Absolutely-essential	vimtips.txt	/*Absolutely-essential*
-Best-Global-combined-with-substitute	vimtips.txt	/*Best-Global-combined-with-substitute*
-best-global	vimtips.txt	/*best-global*
-best-searching	vimtips.txt	/*best-searching*
-best-substitution	vimtips.txt	/*best-substitution*
 easyjump-configuration	easyjump.txt	/*easyjump-configuration*
 easyjump-contents	easyjump.txt	/*easyjump-contents*
 easyjump-features	easyjump.txt	/*easyjump-features*
@@ -16,4 +11,9 @@ fFtT-contents	fFtT.txt	/*fFtT-contents*
 fFtT-installation	fFtT.txt	/*fFtT-installation*
 fFtT-overview	fFtT.txt	/*fFtT-overview*
 fFtT-requirements	fFtT.txt	/*fFtT-requirements*
+vimtips-absolutely-essential	vimtips.txt	/*vimtips-absolutely-essential*
+vimtips-global	vimtips.txt	/*vimtips-global*
+vimtips-global-combined-with-substitute	vimtips.txt	/*vimtips-global-combined-with-substitute*
+vimtips-searching	vimtips.txt	/*vimtips-searching*
+vimtips-substitution	vimtips.txt	/*vimtips-substitution*
 vimtips.txt	vimtips.txt	/*vimtips.txt*

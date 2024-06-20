@@ -2,7 +2,7 @@
 David Rayner (zzapper) 15 Years of Vi + 7 years of Vim and still learning
 ------------------------------------------------------------------------------
 " new items marked [N] , corrected items marked [C]
-" *best-searching*
+" *vimtips-searching*
 /joe/e                      : cursor set to End of match
 3/joe/e+1                   : find 3rd joe cursor set to End of match plus 1 [C]
 /joe/s-2                    : cursor set to Start of match minus 2
@@ -67,7 +67,7 @@ line [U]
 n) [N]
 /integ<C-L>                 : Control-L to complete search term [N]
 "----------------------------------------
-" *best-substitution*
+" *vimtips-substitution*
 :s/foo/\rfoo/g              : \r will substitute a newline
 :%s/fred/joe/igc            : general substitute command
 :%s//joe/igc                : Substitute what you last searched for [N]
@@ -179,7 +179,7 @@ xx13
 " Substitute inside substitute
 :%s/.*/\='cp '.submatch(0).' all/'.substitute(submatch(0),'/','_','g')/
 ----------------------------------------
-" *best-global* command
+" *vimtips-global* command
 :g/gladiolli/#              : display with line numbers (YOU WANT THIS!)
 :g/fred.*joe.*dick/         : display all lines fred,joe & dick
 :g/\<fred\>/                : display all lines fred but not freddy
@@ -237,7 +237,7 @@ cannot use .) [C]
 "send output of previous global command to a new window
 :nmap <F3>  :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR><CR>
 ----------------------------------------
-" *Best-Global-combined-with-substitute* (*power-editing*)
+" *vimtips-global-combined-with-substitute* (*power-editing*)
 :'a,'bg/fred/s/joe/susan/gic :  can use memory to extend matching
 :/fred/,/joe/s/fred/joe/gic :  non-line based (ultra)
 :/biz/,/any/g/article/s/wheel/bucket/gic:  non-line based [N]
@@ -279,7 +279,7 @@ g&     last substitute on all lines
 n      last / or ? search
 N      last / or ? search in opposite direction
 ----------------------------------------
-" *Absolutely-essential*
+" *vimtips-absolutely-essential*
 ----------------------------------------
 * # g* g#           : find word under cursor (<cword>) (forwards/backwards)
 %                   : match brackets {}[]()
