@@ -6,7 +6,7 @@ vim9script
 
 var id: number
 
-hi def link FfTtSubtle Comment
+hi def link FfTtSubtle Conceal
 
 def HighligtClear(): string
     if id > 0
