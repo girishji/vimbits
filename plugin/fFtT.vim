@@ -5,12 +5,13 @@ endif
 vim9script
 
 var id: number
+var winid: number
 
 hi def link FfTtSubtle Conceal
 
 def HighligtClear(): string
     if id > 0
-        id->matchdelete()
+        id->matchdelete(winid)
         :redraw
         id = 0
     endif
@@ -57,8 +58,9 @@ def HighligtChars(s: string): string
 
     if !locations->empty()
         if id > 0
-            matchdelete(id)
+            id->matchdelete(winid)
         endif
+        winid = win_getid()
         id = matchaddpos('FfTtSubtle', locations, 1001)
         :redraw
     endif
