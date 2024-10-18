@@ -245,4 +245,4 @@ You can keep the command line in *vim9script* mode by default and switch back to
 
 3. [**scope.vim**](https://github.com/girishji/scope.vim) - fuzzy find anything.
 
-4. [**Autosuggest.vim**](https://github.com/girishji/autosuggest.vim) - autocompletion for Vim's command mode.
+4. [**VimSuggest**](https://github.com/girishji/vimsuggest) - autocompletion for Vim's command-line.
