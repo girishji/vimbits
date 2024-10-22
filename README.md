@@ -235,6 +235,8 @@ Some things to keep in mind:
 
 - If you work with multi-byte UTF-8 characters, you'll appreciate the *vim9* command line. When slicing a UTF-8 string using the `[from : to]` operator, *vim9* is more predictable because it uses character-based addressing, unlike the byte-based addressing of the legacy script.
 
+- Legacy mode of addressing autoloaded functions and variables still work, even without legacy keywords like `call` and `let`. For instance, both `:vim9 g:foo#bar#baz()` and `:vim9 call g:foo#bar#baz()` work.
+
 You can keep the command line in *vim9script* mode by default and switch back to the legacy script at any time using the `:ToggleVim9Cmdline` command.
 
 ## Other Plugins to Enhance Your Workflow
