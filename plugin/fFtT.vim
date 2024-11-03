@@ -7,7 +7,7 @@ vim9script
 var id: number
 var winid: number
 
-hi def link FfTtSubtle NonText
+hi def link FfTtSubtle Comment
 
 def HighligtClear(): string
     if id > 0
