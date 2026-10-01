@@ -144,24 +144,36 @@ def ScreenPos(lnum: number, col: number): list<number>
     var is_invisible = {row: 0, col: 0, endcol: 0, curscol: 0}
     var scrpos = win_getid()->screenpos(lnum, col)
     if scrpos != is_invisible
+        # cursor line is displayed unconcealed unless 'concealcursor' has 'n',
+        # but synconcealed() still reports its chars as concealed
+        if lnum == line('.') && &concealcursor !~ 'n'
+            return [scrpos.row, scrpos.col]
+        endif
         # screenpos has no knowledge of concealed or substituted chars
         var concealed_len = 0
+        var prev_region = 0
         var idx = 1
         while idx < col
             var status = synconcealed(lnum, idx)
             if status[0] == 1  # concealed
                 var spos = win_getid()->screenpos(lnum, idx)
-                var clen = spos.endcol - spos.col + 1
-                if status[1] != null_string  # substitute char present
-                    echom status[1]
-                    # Vim does not allow/show <tab> as substitute char
-                    # utf-8 chars are either 1 cell or 2 cell wide
-                    clen -= status[1]->strwidth()  # display width in cells
+                # a wrapped line breaks as if unconcealed: only concealed chars
+                # on the same screen row as the target shift it
+                if spos.row == scrpos.row
+                    var clen = spos.endcol - spos.col + 1
+                    # substitute char is shown once per concealed region, not per char
+                    if status[1] != null_string && status[2] != prev_region
+                        # Vim does not allow/show <tab> as substitute char
+                        # utf-8 chars are either 1 cell or 2 cell wide
+                        clen -= status[1]->strwidth()  # display width in cells
+                    endif
+                    concealed_len += clen
                 endif
-                concealed_len += clen
+                prev_region = status[2]
                 var line = getline(lnum)
                 idx += line->strcharpart(line->charidx(idx - 1), 1)->len()  # skip by byte width of char
             else
+                prev_region = 0
                 idx += 1
             endif
         endwhile
