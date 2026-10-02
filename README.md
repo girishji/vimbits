@@ -187,7 +187,7 @@ g:easyjump_case = 'smart' # Can be 'case', 'icase', or 'smart' (default).
 ## Highlight Group
 
 The tag letters displayed alongside destination locations utilize the
-highlighted group `EasyJump`. By default, this group is linked to `IncSearch`. Modify its
+highlighted group `EasyJump`. By default, this group is linked to `MatchParen`. Modify its
 appearance using the `:highlight` command to change colors.
 
 ## Tag Letters
