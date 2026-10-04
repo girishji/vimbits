@@ -77,6 +77,18 @@ def GatherLocations(ctx: string, filter_label: bool = false)
     endfor
 enddef
 
+# max number of high-priority targets on the cursor line; b: overrides g:
+def CursorlineMaxTargets(): number
+    var val = get(b:, 'easyjump_cursorline_max_targets', get(g:, 'easyjump_cursorline_max_targets', 10))
+    if type(val) != v:t_number || val < 1
+        echohl WarningMsg
+        echom 'EasyJump: easyjump_cursorline_max_targets must be a positive number, using 10'
+        echohl None
+        return 10
+    endif
+    return val
+enddef
+
 # order locations list by keeping more locations near cursor, and at least one per line
 def Prioritize()
     var [lstart, lend] = [line('w0'), line('w$')] # lines on screen start/end
@@ -94,7 +106,7 @@ def Prioritize()
         lowpri->extend(curlocations->slice(tmax))
     enddef
 
-    FilterLocations(curline, 10) # 10 locations max
+    FilterLocations(curline, CursorlineMaxTargets())
     if locations->len() > (lend - lstart)
         var excess = locations->len() - (lend - lstart)
         FilterLocations(curline + 1, excess / 3)
