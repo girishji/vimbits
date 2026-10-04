@@ -118,6 +118,30 @@ letters and order can be changed by assigning to the following variable.
 	g:easyjump_letters =
 		'asdfgwercvhjkluiopynmbtqxzASDFGWERCVHJKLUIOPYNMBTQXZ0123456789'
 
+Target locations on the cursorline~
+
+When there are more destinations on screen than tag letters, only the 10
+destinations nearest to the cursor on the cursor line are guaranteed a tag
+letter on the initial search. Others are distributed randomly, so a
+destination at the far end of a long line may require cycling with `<Tab>` or
+`;` until it gets a tag letter. Change this number with the following
+variable.
+>
+	g:easyjump_cursorline_max_targets = 10
+
+Default value: 10
+
+You can also tune this parameter locally per buffer. To do so, use the b:
+variable, which takes precedence over the g: variable. For example, to set it
+to 20 in tex files but keep it at 10 in others, put this in your tex.vim
+ftplugin file.
+>
+	b:easyjump_cursorline_max_targets = 20
+
+or use an autocmd in your vimrc
+>
+	autocmd FileType tex b:easyjump_cursorline_max_targets = 20
+
 ==============================================================================
 
 vim:tw=78:ts=8:noet:ft=help:norl:
