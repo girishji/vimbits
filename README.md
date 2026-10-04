@@ -201,6 +201,29 @@ Dvorak) as needed. Set the following global variable:
 g:easyjump_letters = 'asdfgwercvhjkluiopynmbtqxzASDFGWERCVHJKLUIOPYNMBTQXZ0123456789'
 ```
 
+## Cursorline Targets
+
+When there are more destinations on screen than tag letters, only the 10
+destinations nearest to the cursor on the cursor line are guaranteed a tag
+letter on the initial search. To change this number, set:
+
+```
+g:easyjump_cursorline_max_targets = 10
+```
+
+To set it per buffer, use the b: variable, which takes precedence
+over the g: variable, for example in a tex.vim ftplugin file:
+
+```
+b:easyjump_cursorline_max_targets = 20
+```
+
+Or in your vimrc:
+
+```
+autocmd FileType tex b:easyjump_cursorline_max_targets = 20
+```
+
 # Plugin: fFtT
 
 Characters that are reachable with a single jump are highlighted, while others are dimmed. This enhancement enhances the accuracy of navigation using `f`, `F`, `t`, and `T` commands. Moreover, you can prefix the command with a numerical `[count]` (e.g., `3f`), which will exclusively highlight the `[count]`'th occurrence (third in this instance) of a character to the right of the cursor, while dimming the others.
